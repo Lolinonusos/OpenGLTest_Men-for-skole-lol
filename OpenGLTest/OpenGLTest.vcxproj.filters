@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{422f61b8-7751-4d03-b167-209dfbf670ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{70ea70ec-4b2a-42da-b1a7-3cca1ab9ff4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="school files">
+      <UniqueIdentifier>{b1cb7ab8-5f71-4ef8-89a2-226914d6907a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\txt files">
+      <UniqueIdentifier>{f5507038-9d7f-4eab-bed3-02b2c904aa31}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xyz.cpp">
+      <Filter>school files</Filter>
+    </ClCompile>
+    <ClCompile Include="visObject.cpp">
+      <Filter>school files</Filter>
+    </ClCompile>
+    <ClCompile Include="cube.cpp">
+      <Filter>school files</Filter>
+    </ClCompile>
+    <ClCompile Include="triangleSurface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tetrahedon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graph.cpp">
+      <Filter>school files</Filter>
+    </ClCompile>
+    <ClCompile Include="fileReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MObligEnOppgTo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="linusCam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xyz.h">
+      <Filter>school files</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex.h">
+      <Filter>school files</Filter>
+    </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>school files</Filter>
+    </ClInclude>
+    <ClInclude Include="learnOpenGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triangleSurface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tetrahedon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graph.h">
+      <Filter>school files</Filter>
+    </ClInclude>
+    <ClInclude Include="fileReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="visObject.h">
+      <Filter>school files</Filter>
+    </ClInclude>
+    <ClInclude Include="MObligEnOppgTo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="linusCam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="first.vs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="first.fs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="firstTexVertShader.vs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="firstTexFragShader.fs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="mixTexture.fs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="rotate.vs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="SkolVert.vs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="SkolFrag.fs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="awesomeface.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Helene.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="skeet (1).png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Oppg2.txt">
+      <Filter>Resource Files\txt files</Filter>
+    </Text>
+    <Text Include="Data.txt">
+      <Filter>Resource Files\txt files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
