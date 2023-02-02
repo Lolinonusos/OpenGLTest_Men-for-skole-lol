@@ -145,11 +145,17 @@ int main() {
     glm::vec3(1.5f,  0.2f, -1.5f),
     glm::vec3(-1.3f,  1.0f, -1.5f)
     };
-   
+    glEnable(GL_DEPTH_TEST);
+    
+    //###########################################################################
+    // 
+    // Programmer under her
+    // Kall på konstuktør først, deretter init funksjonen dens
+    //
+    //###########################################################################
 
     //trir.readFile("Data.txt");
     
-    glEnable(GL_DEPTH_TEST);
     
     Graph graph;
     graph.init(1);
@@ -163,8 +169,14 @@ int main() {
     //cube.readFile("Data.txt");
 
     // render loop
-    while (!glfwWindowShouldClose(window))
-    {
+    while (!glfwWindowShouldClose(window)) {
+        //###########################################################################
+        // 
+        // Denne while-loopen fungerer som renderWindow sin render funksjon
+        // Kaotisk nå, men vi kan rydde opp i den senere
+        //
+        //###########################################################################
+
         float currentFrame = static_cast<float>(glfwGetTime());
         deltaTime = currentFrame - lastFrame; // Time between current frame and last frame
         lastFrame = currentFrame; // Time of last frame
@@ -174,17 +186,14 @@ int main() {
 
         // Background colour
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+
         // Clean the back buffer and assign the new color to it
         glClear(GL_COLOR_BUFFER_BIT);
         // Clear depth buffer
         glClear(GL_DEPTH_BUFFER_BIT);
         // Can be written together like this
-         
         //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        //glActiveTexture(GL_TEXTURE0);
-        //helene.bind();
-      
+  
         // Which shader program we will use
         ourShader.use();
     
@@ -196,7 +205,8 @@ int main() {
         glm::mat4 view = camera.getViewMatrix();
         ourShader.setMat4("view", view);
         
-        //int ma
+        //######################################################
+        // Kan kalle draw funksjoner her
 
         for (int i = 0; i < 10; i++) {
             glm::mat4 model = glm::mat4(1.0f);
@@ -211,11 +221,14 @@ int main() {
         graph.draw();
         //cube.draw();
     
+        //######################################################
+
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
     
+    // Kall på dekonstruktører og andre terminate funksjoner her
     cube.~TriangleSurface();
     
     // Shader program
