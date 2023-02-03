@@ -1,4 +1,6 @@
 #include "vertex.h"
+#include <glm/glm.hpp>
+
 
 std::ostream& operator<<(std::ostream& os, const Vertex& v)
 {
@@ -57,6 +59,13 @@ Vertex::Vertex(glm::vec3 xyz)
 		texCoord = glm::vec2(0.0f, 0.0f);
 
 	
+}
+
+Vertex::Vertex(glm::vec3 xyz, glm::vec3 rgb)
+{
+	position = xyz;
+	normal = rgb;
+	texCoord = glm::vec2(0.0f, 0.0f);
 }
 
 Vertex::Vertex(glm::vec3 xyz, glm::vec3 rgb, glm::vec2 uv)

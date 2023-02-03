@@ -219,7 +219,7 @@ int main() {
             //gldrawarrays(gl_triangles, 0, 36);
         }
         graph.draw();
-        //cube.draw();
+        cube.draw();
     
         //######################################################
 
