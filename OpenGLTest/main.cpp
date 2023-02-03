@@ -63,7 +63,7 @@ void mouse_callback(GLFWwindow*, double xPosIn, double yPosIn) {
     float xPos = static_cast<float>(xPosIn);
     float yPos = static_cast<float>(yPosIn);
 
-    //std::cout << "Mouse x:" << xPos << "    y:" << yPos << std::endl;
+    std::cout << "Mouse x:" << xPos << "    y:" << yPos << std::endl;
     if (firstMouse) {
         lastX = xPos;
         lastY = yPos;

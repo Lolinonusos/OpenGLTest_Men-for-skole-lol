@@ -94,7 +94,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vertex.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>school files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
