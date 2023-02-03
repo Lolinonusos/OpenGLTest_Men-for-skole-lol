@@ -172,7 +172,6 @@
     <ClCompile Include="model.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="shape.cpp" />
-    <ClCompile Include="Source.cpp" />
     <ClCompile Include="stb.cpp" />
     <ClCompile Include="tetrahedon.cpp" />
     <ClCompile Include="texture.cpp" />

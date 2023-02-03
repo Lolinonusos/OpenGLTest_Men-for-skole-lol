@@ -114,7 +114,7 @@ void Graph::init(int inMatrixUniform) {
 void Graph::draw() {
 	glBindVertexArray(VAO);
 	glUniformMatrix4fv(matrixUniform, 1, GL_FALSE, glm::value_ptr(matrix));
-	glDrawArrays(GL_LINES, 0, vertices.size());// vertices.size());
+	glDrawArrays(GL_TRIANGLES, 0, vertices.size());// vertices.size());
 }
 
 // GL_TRIANGLES
