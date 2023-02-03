@@ -37,24 +37,66 @@ float lastX = SCR_WIDTH / 2;
 float lastY = SCR_HEIGHT / 2;
 bool firstMouse = true;
 
+// Other input stuffs
+bool changeObj = true; // Change between controlling camera or other unspecified object
+
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 void processInput(GLFWwindow* window) {
     const float camSpeed = 2.0f * deltaTime;
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) { // FORWARD
+    
+    }
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) { // BACKWARD
+    
+    }
+    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) { // RIGHT
+    
+    }
+    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) { // LEFT
+    
+    }
+
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) { // FORWARD
-        //camPos += camSpeed * camFront;
-        camera.processKeyboard(FORWARD, deltaTime);
+        if (changeObj) {
+            // Camera
+            camera.processKeyboard(FORWARD, deltaTime); 
+        }
+        else {
+            // Other object
+        }
     }
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) { // BACKWARD
-        camera.processKeyboard(BACKWARD, deltaTime);
+        if (changeObj) {
+            // Camera
+            camera.processKeyboard(BACKWARD, deltaTime); 
+        }
+        else {
+            // Other object
+
+        }
     }
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) { // RIGHT
-        camera.processKeyboard(RIGHT, deltaTime);
+        if (changeObj) {
+            // Camera
+            camera.processKeyboard(RIGHT, deltaTime); 
+        }
+        else {
+            // Other object
+
+        }
     }
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) { // LEFT
-        camera.processKeyboard(LEFT, deltaTime);
+        if (changeObj) {
+            // Camera
+            camera.processKeyboard(LEFT, deltaTime); 
+        }
+        else {
+            // Other object
+
+        }
     }
 }
 
@@ -160,11 +202,12 @@ int main() {
     Graph graph;
     graph.init(1);
 
-    TriangleSurface cube("Oppg2.txt", false);
+    TriangleSurface triSur("Oppg2.txt", false);
     //cube.writefile("Data2.txt");
+    triSur.init(1);
 
-    cube.init(1);
-
+    Cube kub;
+    kub.init(1);
 
     //cube.readFile("Data.txt");
 
@@ -219,8 +262,8 @@ int main() {
             //gldrawarrays(gl_triangles, 0, 36);
         }
         graph.draw();
-        cube.draw();
-    
+        triSur.draw();
+        kub.draw();
         //######################################################
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -229,7 +272,7 @@ int main() {
     }
     
     // Kall på dekonstruktører og andre terminate funksjoner her
-    cube.~TriangleSurface();
+    triSur.~TriangleSurface();
     
     // Shader program
     ourShader.remove();
