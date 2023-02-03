@@ -16,6 +16,9 @@ public:
 	void draw() override;
 
 	std::vector<Vertex> Vertex_data;
+	glm::mat4x4 mMatrix;
+
+	GLuint BufferID;
 };
 
 #endif

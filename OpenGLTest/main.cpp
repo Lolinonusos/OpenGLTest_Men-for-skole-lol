@@ -17,6 +17,9 @@
 #include "cube.h"
 #include "graph.h"
 #include "triangleSurface.h"
+#include "tetrahedon.h"
+
+
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -53,6 +56,7 @@ void processInput(GLFWwindow* window) {
     
     }
     if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) { // RIGHT
+
     
     }
     if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) { // LEFT
@@ -60,6 +64,7 @@ void processInput(GLFWwindow* window) {
     }
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) { // FORWARD
+      
         if (changeObj) {
             // Camera
             camera.processKeyboard(FORWARD, deltaTime); 
@@ -209,10 +214,14 @@ int main() {
     Cube kub;
     kub.init(1);
 
+    Tetrahedon tetra;
+    tetra.init(1);
+
     //cube.readFile("Data.txt");
 
     // render loop
     while (!glfwWindowShouldClose(window)) {
+        
         //###########################################################################
         // 
         // Denne while-loopen fungerer som renderWindow sin render funksjon
@@ -264,6 +273,7 @@ int main() {
         graph.draw();
         triSur.draw();
         kub.draw();
+        tetra.draw();
         //######################################################
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
