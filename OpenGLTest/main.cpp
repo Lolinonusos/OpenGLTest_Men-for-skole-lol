@@ -13,6 +13,7 @@
 #include "camera.h"
 #include "model.h"
 
+#include "tetrahedon.h"
 #include "visObject.h"
 #include "xyz.h"
 #include "cube.h"
@@ -210,6 +211,8 @@ int main() {
     Graph graph;
     graph.init(1);
 
+
+
     TriangleSurface triSur("Oppg2.txt", false);
     //cube.writefile("Data2.txt");
     triSur.init(1);
@@ -219,6 +222,10 @@ int main() {
 
     intObj.init(1);
     //cube.readFile("Data.txt");
+
+    Tetrahedon tetra;
+    tetra.init(1);
+
 
     for (unsigned int i = 0; i < visObjects.size(); i++) {
         visObjects[i].init(1);
@@ -283,6 +290,7 @@ int main() {
         triSur.draw();
         //kub.draw();
         intObj.draw();
+        tetra.draw();
         //######################################################
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)

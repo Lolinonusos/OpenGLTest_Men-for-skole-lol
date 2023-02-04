@@ -4,10 +4,10 @@
 
 Tetrahedon::Tetrahedon()
 {
-	Vertex_data.push_back(Vertex{ 0.0f, 0.0f, 0.0f,  0.0f ,0.0f, 0.0f });
-	Vertex_data.push_back(Vertex{ 0.0f, 0.0f, 1.0f,  0.0f ,0.0f, 0.0f });
-	Vertex_data.push_back(Vertex{ 0.0f, 1.0f, 0.0f,  0.0f ,0.0f, 0.0f });
-	Vertex_data.push_back(Vertex{ 1.0f, 0.0f, 0.0f,  0.0f ,0.0f, 0.0f });
+	vertices.push_back(Vertex{ 0.0f, 0.0f, 0.0f,  0.0f ,0.0f, 0.0f });
+	vertices.push_back(Vertex{ 0.0f, 0.0f, 1.0f,  0.0f ,0.0f, 0.0f });
+	vertices.push_back(Vertex{ 0.0f, 1.0f, 0.0f,  0.0f ,0.0f, 0.0f });
+	vertices.push_back(Vertex{ 1.0f, 0.0f, 0.0f,  0.0f ,0.0f, 0.0f });
 	//Vertex_data.push_back(Vertex{ 0.5f, 0.5f, 1.0f,  0.0f ,0.0f, 0.0f });
 
 }
