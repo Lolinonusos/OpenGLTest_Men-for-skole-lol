@@ -280,14 +280,14 @@ int main() {
             //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(0.5f, 1.0f, 0.0f));
             ourShader.setMat4("model", model);
             //gldrawarrays(gl_triangles, 0, 36);
-            visObjects[i].draw();
+            //visObjects[i].draw();
         }
 
         for (unsigned int i = 0; i < visObjects.size(); i++) {
         }
 
-        graph.draw();
-        triSur.draw();
+        //graph.draw();
+        //triSur.draw();
         //kub.draw();
         intObj.draw();
         tetra.draw();
