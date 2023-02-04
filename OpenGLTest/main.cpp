@@ -17,9 +17,7 @@
 #include "cube.h"
 #include "graph.h"
 #include "triangleSurface.h"
-#include "tetrahedon.h"
-
-
+#include "interactive.h"
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -41,6 +39,7 @@ float lastY = SCR_HEIGHT / 2;
 bool firstMouse = true;
 
 // Other input stuffs
+Interactive intObj(glm::vec3(0.0f, 0.0f, 0.0f));
 bool changeObj = true; // Change between controlling camera or other unspecified object
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
@@ -50,21 +49,22 @@ void processInput(GLFWwindow* window) {
         glfwSetWindowShouldClose(window, true);
 
     if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) { // FORWARD
-    
+        intObj.move(0.0f, 1.0f, 0.0f, deltaTime);
     }
     if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) { // BACKWARD
-    
+        intObj.move(0.0f, -1.0f, 0.0f, deltaTime);
+
     }
     if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) { // RIGHT
+        intObj.move(1.0f, 0.0f, 0.0f, deltaTime);
 
-    
     }
     if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) { // LEFT
-    
+        intObj.move(-1.0f, 0.0f, 0.0f, deltaTime);
+
     }
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) { // FORWARD
-      
         if (changeObj) {
             // Camera
             camera.processKeyboard(FORWARD, deltaTime); 
@@ -214,14 +214,11 @@ int main() {
     Cube kub;
     kub.init(1);
 
-    Tetrahedon tetra;
-    tetra.init(1);
-
+    intObj.init(1);
     //cube.readFile("Data.txt");
 
     // render loop
     while (!glfwWindowShouldClose(window)) {
-        
         //###########################################################################
         // 
         // Denne while-loopen fungerer som renderWindow sin render funksjon
@@ -260,20 +257,22 @@ int main() {
         //######################################################
         // Kan kalle draw funksjoner her
 
+        
         for (int i = 0; i < 10; i++) {
+
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, cubePositions[i]);
             float angle = 20.0f * 1 + i * 2;
             model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(0.5f, 1.0f, 0.0f));
             ourShader.setMat4("model", model);
-            //glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+            
 
             //gldrawarrays(gl_triangles, 0, 36);
         }
         graph.draw();
         triSur.draw();
-        kub.draw();
-        tetra.draw();
+        //kub.draw();
+        intObj.draw();
         //######################################################
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)

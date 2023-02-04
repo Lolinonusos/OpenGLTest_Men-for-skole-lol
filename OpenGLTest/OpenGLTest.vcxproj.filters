@@ -93,6 +93,9 @@
     <ClCompile Include="vertex.cpp">
       <Filter>school files</Filter>
     </ClCompile>
+    <ClCompile Include="interactive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader.h">
@@ -157,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="MObligEnOppgTo.h">
       <Filter>school files</Filter>
+    </ClInclude>
+    <ClInclude Include="interactive.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
