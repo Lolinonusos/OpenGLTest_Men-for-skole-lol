@@ -7,12 +7,13 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
+#include <vector>
 
 #include "shader.h"
 #include "camera.h"
 #include "model.h"
 
-
+#include "visObject.h"
 #include "xyz.h"
 #include "cube.h"
 #include "graph.h"
@@ -41,6 +42,8 @@ bool firstMouse = true;
 // Other input stuffs
 Interactive intObj(glm::vec3(0.0f, 0.0f, 0.0f));
 bool changeObj = true; // Change between controlling camera or other unspecified object
+
+std::vector<visObject> visObjects;
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 void processInput(GLFWwindow* window) {
@@ -217,6 +220,10 @@ int main() {
     intObj.init(1);
     //cube.readFile("Data.txt");
 
+    for (unsigned int i = 0; i < visObjects.size(); i++) {
+        visObjects[i].init(1);
+    }
+
     // render loop
     while (!glfwWindowShouldClose(window)) {
         //###########################################################################
@@ -258,17 +265,20 @@ int main() {
         // Kan kalle draw funksjoner her
 
         
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < visObjects.size(); i++) {
 
             glm::mat4 model = glm::mat4(1.0f);
             model = glm::translate(model, cubePositions[i]);
             float angle = 20.0f * 1 + i * 2;
-            model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(0.5f, 1.0f, 0.0f));
+            //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(0.5f, 1.0f, 0.0f));
             ourShader.setMat4("model", model);
-            
-
             //gldrawarrays(gl_triangles, 0, 36);
+            visObjects[i].draw();
         }
+
+        for (unsigned int i = 0; i < visObjects.size(); i++) {
+        }
+
         graph.draw();
         triSur.draw();
         //kub.draw();

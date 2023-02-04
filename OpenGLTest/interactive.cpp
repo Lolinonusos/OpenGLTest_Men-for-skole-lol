@@ -83,6 +83,7 @@ void Interactive::draw()
 
 void Interactive::move(float inX, float inY, float inZ, float deltaTime)
 {
+    // Ganger med deltatime for å bevege objektet uavhengig av frame-rate
     position = glm::vec3(inX, inY, inZ) * deltaTime;
     matrix = glm::translate(matrix, position);
 }

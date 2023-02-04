@@ -43,8 +43,6 @@ protected:
 	int matrixUniform{};
 	glm::mat4 matrix;
 
-
-
 	glm::mat4 position;
 	glm::mat4 rotation;
 	glm::mat4 scale;
