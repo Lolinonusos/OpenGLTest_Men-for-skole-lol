@@ -1,12 +1,12 @@
 #include "xyz.h"
 
 XYZ::XYZ() {
-	vertices.push_back(Vertex{ glm::vec3(0, 0, 0), glm::vec3(1, 0, 0) });
-	vertices.push_back(Vertex{ glm::vec3(1, 0, 0), glm::vec3(1, 0, 0) });
-	vertices.push_back(Vertex{ glm::vec3(0, 0, 0), glm::vec3(0, 1, 0) });
-	vertices.push_back(Vertex{ glm::vec3(0, 1, 0), glm::vec3(0, 1, 0) });
-	vertices.push_back(Vertex{ glm::vec3(0, 0, 0), glm::vec3(0, 0, 1) });
-	vertices.push_back(Vertex{ glm::vec3(0, 0, 1), glm::vec3(0, 0, 1) });
+	vertices.push_back(Vertex{ glm::vec3(-10, 0, 0), glm::vec3(1, 0, 0) });
+	vertices.push_back(Vertex{ glm::vec3(10, 0, 0), glm::vec3(1, 0, 0) });
+	vertices.push_back(Vertex{ glm::vec3(0, -10, 0), glm::vec3(0, 1, 0) });
+	vertices.push_back(Vertex{ glm::vec3(0, 10, 0), glm::vec3(0, 1, 0) });
+	vertices.push_back(Vertex{ glm::vec3(0, 0, -10), glm::vec3(0, 0, 1) });
+	vertices.push_back(Vertex{ glm::vec3(0, 0, 10), glm::vec3(0, 0, 1) });
 
 }
 
@@ -16,7 +16,7 @@ XYZ::~XYZ() {
 
 void XYZ::init(int inMatrixUniform) {
 
-	matrixUniform = inMatrixUniform;
+	//matrixUniform = inMatrixUniform;
 
 	// Generating and binding Vertex Array Object
 	glGenVertexArrays(1, &VAO);
@@ -45,7 +45,6 @@ void XYZ::init(int inMatrixUniform) {
 
 void XYZ::draw() {
 	glBindVertexArray(VAO);
-	
 	glUniformMatrix4fv(matrixUniform, 1, GL_FALSE, glm::value_ptr(matrix));
 	glDrawArrays(GL_LINES, 0, vertices.size());
 }

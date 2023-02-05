@@ -32,9 +32,16 @@ public:
 	// Tvinger alle klasser som arver fra denne til å ha sin egen override av funksjonen
 	virtual void draw() = 0; 
 
-	virtual void alterPosition(glm::vec3 inPos) {
+	void alterTransformations(glm::vec3 inPos) {
 		matrix = glm::mat4(1.0f);
 		matrix = glm::translate(matrix, inPos);
+	}
+
+	void alterTransformations(glm::vec3 inPos, float inAngle, glm::vec3 inRot) {
+		matrix = glm::mat4(1.0f);
+		matrix = glm::translate(matrix, inPos);
+		matrix = glm::rotate(matrix, glm::radians(inAngle), inRot);
+		//(float)glfwGetTime()*
 	}
 
 protected:
@@ -51,10 +58,6 @@ protected:
 	glm::mat4 position;
 	glm::mat4 rotation;
 	glm::mat4 scale;
-
-
-
-
 };
 
 #endif

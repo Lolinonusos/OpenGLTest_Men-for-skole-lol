@@ -107,6 +107,12 @@ void processInput(GLFWwindow* window) {
 
         }
     }
+
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) { // LEFT
+    
+        //visObjects.push_back(new Cube);
+    }
+
 }
 
 void mouse_callback(GLFWwindow*, double xPosIn, double yPosIn) {
@@ -209,7 +215,9 @@ int main() {
     int v;
     int p;*/
 
-    
+    XYZ xyz;
+    xyz.init(1);
+
     Graph graph;
     graph.init(1);
 
@@ -230,7 +238,7 @@ int main() {
     visObjects.push_back(new Cube());
     visObjects.push_back(new TriangleSurface());
     visObjects.push_back(new Cube());
-    visObjects.push_back(new TriangleSurface());
+    visObjects.push_back(new Tetrahedon());
 
 
     //kub.init(1);
@@ -241,15 +249,14 @@ int main() {
     Tetrahedon tetra;
     tetra.init(1);
 
-    visObjects.push_back(kub);
-    visObjects.push_back(tetra);
+    //visObjects.push_back(tetra);
 
+    // render loop
     for (unsigned int i = 0; i < visObjects.size(); i++) {
         visObjects[i]->init(1);
     }
-
-    // render loop
     while (!glfwWindowShouldClose(window)) {
+
         //###########################################################################
         // 
         // Denne while-loopen fungerer som renderWindow sin render funksjon
@@ -286,15 +293,15 @@ int main() {
         ourShader.setMat4("view", view);
         
         //######################################################
-        // Kan kalle draw funksjoner her
+        // Kalle på draw funksjoner inni her
 
         
         for (int i = 0; i < visObjects.size(); i++) {
 
             glm::mat4 model = glm::mat4(1.0f);
             //model = glm::translate(model, cubePositions[i]);
-            //visObjects[i]->alterPosition(cubePositions[i]);
-            visObjects[i]->alterPosition(cubePositions[i]);
+
+            visObjects[i]->alterTransformations(cubePositions[i]);
             float angle = 20.0f * 1 + i * 2;
             //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(0.5f, 1.0f, 0.0f));
             //gldrawarrays(gl_triangles, 0, 36);
@@ -305,11 +312,16 @@ int main() {
         for (unsigned int i = 0; i < visObjects.size(); i++) {
         }
 
+        graph.alterTransformations(glm::vec3(0.0f, -5.0f, -10.0f), 90, glm::vec3(1.0f, 0.0f, 0.0f));
+
+        xyz.draw();
         graph.draw();
         triSur.draw();
         //kub.draw();
         intObj.draw();
         tetra.draw();
+
+        // Slutt å kalle på draw funksjoner
         //######################################################
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
