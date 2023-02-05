@@ -241,6 +241,8 @@ int main() {
     Tetrahedon tetra;
     tetra.init(1);
 
+    visObjects.push_back(kub);
+    visObjects.push_back(tetra);
 
     for (unsigned int i = 0; i < visObjects.size(); i++) {
         visObjects[i]->init(1);
