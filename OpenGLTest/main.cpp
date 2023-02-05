@@ -312,7 +312,7 @@ int main() {
         for (unsigned int i = 0; i < visObjects.size(); i++) {
         }
 
-        graph.alterTransformations(glm::vec3(0.0f, -5.0f, -10.0f), 90, glm::vec3(1.0f, 0.0f, 0.0f));
+        graph.alterTransformations(glm::vec3(0.0f, -5.0f, 0.0f), 90, glm::vec3(1.0f, 0.0f, 0.0f));
 
         xyz.draw();
         graph.draw();

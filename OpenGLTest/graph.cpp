@@ -31,26 +31,24 @@ Graph::Graph() {
 
 
 		for (float y = min; y <= max; y += h) {
-			//z = ;
-			//vertices.push_back(Vertex{ glm::vec3(x, y, z), glm::vec3(x, y, z) });
-			//std::cout << '(' << x << ", " << y << ", " << z << ')' << ' ' << '(' << x << ", " << y << ", " << z << ')' << '(' << 0 << ", " << 0 << ')' << std::endl;
-			//std::cout << '(' << x << ", " << y << ", " << z << ')' << std::endl;
-		/*	vertices.push_back(Vertex{ glm::vec3(x, y + h, z), glm::vec3(x, y, z) });
-			std::cout << '(' << x << ", " << y << ", " << z << ')' << std::endl;
-
-			z = sin(glm::pi<float>() * (x + h)) * sin(glm::pi<float>() * y);
+			z = 3 * sin(x * 0.5f) * 3 * sin(y * 0.5f);
+			vertices.push_back(Vertex{ glm::vec3(x, y, z), glm::vec3(x, y, z) });
+			
+			z = 3 * sin((x + h) * 0.5f) * 3 * sin(y * 0.5f);
 			vertices.push_back(Vertex{ glm::vec3(x + h, y, z), glm::vec3(x, y, z) });
-			std::cout << '(' << x << ", " << y << ", " << z << ')' << std::endl;
+			
+			z = 3 * sin(x * 0.5f) * 3 * sin((y + h) * 0.5f);
+			vertices.push_back(Vertex{ glm::vec3(x, y + h, z), glm::vec3(x, y, z) });
+			vertices.push_back(Vertex{ glm::vec3(x, y + h, z), glm::vec3(x, y, z) });
+					
+			z = 3 * sin((x + h) * 0.5f) * 3 * sin(y * 0.5f);
+			vertices.push_back(Vertex{ glm::vec3(x + h, y, z), glm::vec3(x, y, z) });
+			
+			z = 3 * sin((x + h) * 0.5f) * 3 * sin((y + h) * 0.5f);
+			vertices.push_back(Vertex{ glm::vec3(x + h, y + h, z), glm::vec3(x, y, z )});
 
-			z = sin(glm::pi<float>() * (x + h)) * sin(glm::pi<float>() * (y + h));
-			vertices.push_back(Vertex{ glm::vec3(x + h, y + h, z), glm::vec3(x, y, z )});*/
-			//std::cout << '(' << x << ", " << y << ", " << z << ')' << std::endl;
-
-			//z = 3 * sin(x * 6);
-			//vertices.push_back(Vertex{ glm::vec3(x, y, z), glm::vec3(x, y, z) });
-			//std::cout << '(' << x << ", " << y << ", " << z << ')' << ' ' << '(' << x << ", " << y << ", " << z << ')' << '(' << 0 << ", " << 0 << ')' << std::endl;
-
-			z = sin(glm::pi<float>() * x) * sin(glm::pi<float>() * y);
+			// Dag sin mattefunksjon
+	/*		z = sin(glm::pi<float>() * x) * sin(glm::pi<float>() * y);
 			vertices.push_back(Vertex{ glm::vec3(x, y, z), glm::vec3(x, y, z) });
 
 			z = sin(glm::pi<float>() * (x + h)) * sin(glm::pi<float>() * y);
@@ -64,7 +62,7 @@ Graph::Graph() {
 			vertices.push_back(Vertex{ glm::vec3(x + h, y, z), glm::vec3(x, y, z) });
 
 			z = sin(glm::pi<float>() * (x + h)) * sin(glm::pi<float>() * (y + h));
-			vertices.push_back(Vertex{ glm::vec3(x + h, y + h, z), glm::vec3(x, y, z) });
+			vertices.push_back(Vertex{ glm::vec3(x + h, y + h, z), glm::vec3(x, y, z) });*/
 			
 			
 			// Dette er en funksjon
