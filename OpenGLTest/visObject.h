@@ -1,7 +1,5 @@
-
 #ifndef VISOBJECT_H
 #define VISOBJECT_H
-
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -33,6 +31,12 @@ public:
 	// Får det ved å skrive = 0 etter funksjonen
 	// Tvinger alle klasser som arver fra denne til å ha sin egen override av funksjonen
 	virtual void draw() = 0; 
+
+	virtual void alterPosition(glm::vec3 inPos) {
+		matrix = glm::mat4(1.0f);
+		matrix = glm::translate(matrix, inPos);
+	}
+
 protected:
 	std::vector<Vertex> vertices;
 	std::vector<unsigned int> indices;
@@ -41,6 +45,7 @@ protected:
 	unsigned int VBO{};
 
 	int matrixUniform{};
+
 	glm::mat4 matrix;
 
 	glm::mat4 position;

@@ -94,7 +94,7 @@
       <Filter>school files</Filter>
     </ClCompile>
     <ClCompile Include="interactive.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>school files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,7 +162,7 @@
       <Filter>school files</Filter>
     </ClInclude>
     <ClInclude Include="interactive.h">
-      <Filter>Header Files</Filter>
+      <Filter>school files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

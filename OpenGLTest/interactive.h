@@ -17,6 +17,6 @@ public:
 
 private:
 	float movementSpeed = 2.0f; // Not in use yet
-	glm::vec3 position;
+	glm::vec3 inposition;
 };
 

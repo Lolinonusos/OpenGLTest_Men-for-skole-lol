@@ -81,9 +81,9 @@ void Interactive::draw()
     glDrawArrays(GL_TRIANGLES, 0, vertices.size());
 }
 
-void Interactive::move(float inX, float inY, float inZ, float deltaTime)
-{
+// Må kalles før draw
+void Interactive::move(float inX, float inY, float inZ, float deltaTime) {
     // Ganger med deltatime for å bevege objektet uavhengig av frame-rate
-    position = glm::vec3(inX, inY, inZ) * deltaTime;
-    matrix = glm::translate(matrix, position);
+    inposition = glm::vec3(inX, inY, inZ) * deltaTime;
+    matrix = glm::translate(matrix, inposition);
 }

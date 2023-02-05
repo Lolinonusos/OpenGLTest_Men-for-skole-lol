@@ -44,7 +44,7 @@ bool firstMouse = true;
 Interactive intObj(glm::vec3(0.0f, 0.0f, 0.0f));
 bool changeObj = true; // Change between controlling camera or other unspecified object
 
-std::vector<visObject> visObjects;
+std::vector<visObject*> visObjects;
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 void processInput(GLFWwindow* window) {
@@ -205,8 +205,10 @@ int main() {
     //
     //###########################################################################
 
-    //trir.readFile("Data.txt");
-    
+  /*  int m = ourShader.setInt("model", m);
+    int v;
+    int p;*/
+
     
     Graph graph;
     graph.init(1);
@@ -217,8 +219,21 @@ int main() {
     //cube.writefile("Data2.txt");
     triSur.init(1);
 
-    Cube kub;
-    kub.init(1);
+    //Cube kub;
+    
+    visObjects.push_back(new Cube());
+    visObjects.push_back(new TriangleSurface());
+    visObjects.push_back(new Cube());
+    visObjects.push_back(new TriangleSurface());
+    visObjects.push_back(new Cube());
+    visObjects.push_back(new TriangleSurface());
+    visObjects.push_back(new Cube());
+    visObjects.push_back(new TriangleSurface());
+    visObjects.push_back(new Cube());
+    visObjects.push_back(new TriangleSurface());
+
+
+    //kub.init(1);
 
     intObj.init(1);
     //cube.readFile("Data.txt");
@@ -228,7 +243,7 @@ int main() {
 
 
     for (unsigned int i = 0; i < visObjects.size(); i++) {
-        visObjects[i].init(1);
+        visObjects[i]->init(1);
     }
 
     // render loop
@@ -275,19 +290,21 @@ int main() {
         for (int i = 0; i < visObjects.size(); i++) {
 
             glm::mat4 model = glm::mat4(1.0f);
-            model = glm::translate(model, cubePositions[i]);
+            //model = glm::translate(model, cubePositions[i]);
+            //visObjects[i]->alterPosition(cubePositions[i]);
+            visObjects[i]->alterPosition(cubePositions[i]);
             float angle = 20.0f * 1 + i * 2;
             //model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(0.5f, 1.0f, 0.0f));
-            ourShader.setMat4("model", model);
             //gldrawarrays(gl_triangles, 0, 36);
-            //visObjects[i].draw();
+            ourShader.setMat4("model", model);
+            visObjects[i]->draw();
         }
 
         for (unsigned int i = 0; i < visObjects.size(); i++) {
         }
 
-        //graph.draw();
-        //triSur.draw();
+        graph.draw();
+        triSur.draw();
         //kub.draw();
         intObj.draw();
         tetra.draw();

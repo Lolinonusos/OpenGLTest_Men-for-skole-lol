@@ -105,5 +105,5 @@ void TriangleSurface::draw()
 {
 	glBindVertexArray(VAO);
 	glUniformMatrix4fv(matrixUniform, 1, GL_FALSE, glm::value_ptr(matrix));
-	glDrawArrays(GL_TRIANGLES, 0, vertices.size());// vertices.size());
+	glDrawArrays(GL_LINE_LOOP, 0, vertices.size());// vertices.size());
 }
