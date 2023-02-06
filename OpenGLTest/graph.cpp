@@ -15,7 +15,7 @@ Graph::Graph() {
 	float z{};
 	for ( x = min; x <= max; x += h) {
 		
-
+			// 2d funksjon
 			//y = 3 * sin(x * 6);
 			//vertices.push_back(Vertex{glm::vec3(x, y, z), glm::vec3(x, y, z)});
 			////std::cout << '(' << x << ", " << y << ", " << z << ')' << std::endl;
